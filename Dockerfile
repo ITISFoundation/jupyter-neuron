@@ -2,7 +2,7 @@ ARG JUPYTER_MINIMAL_VERSION=lab-3.3.2@sha256:a4bf48221bfa864759e0f248affec3df1af
 FROM jupyter/minimal-notebook:${JUPYTER_MINIMAL_VERSION}
 
 
-LABEL maintainer="pcrespov"
+LABEL maintainer="elisabettai"
 
 ENV JUPYTER_ENABLE_LAB="yes"
 # autentication is disabled for now
@@ -13,11 +13,10 @@ USER root
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-  gfortran \
   ffmpeg \
-  make \
   dvipng \
   gosu \
+  make \
   octave \
   gnuplot \
   liboctave-dev \
@@ -32,6 +31,7 @@ RUN apt-get update && \
   && \
   apt-get clean && rm -rf /var/lib/apt/lists/* 
 
+# Installing octave packages requires make
 RUN octave --no-window-system --eval "pkg install -forge io" && \
   octave --no-window-system --eval "pkg install -forge statistics" && \
   octave --no-window-system --eval "pkg install -forge image"    
@@ -58,17 +58,20 @@ RUN python3 -m venv .venv &&\
   .venv/bin/python -m ipykernel install \
   --user \
   --name "python-neurons" \
-  --display-name "python (maths)" \
+  --display-name "python (NEURON)" \
   && \
   echo y | .venv/bin/python -m jupyter kernelspec uninstall python3 &&\
   .venv/bin/python -m jupyter kernelspec list
 
 # copy and resolve dependecies to be up to date
-COPY --chown=$NB_UID:$NB_GID kernels/python-neurons/requirements.in ${NOTEBOOK_BASE_DIR}/requirements.in
+COPY --chown=$NB_UID:$NB_GID kernels/python-neuron/requirements.in ${NOTEBOOK_BASE_DIR}/requirements.in
 RUN .venv/bin/pip --no-cache install pip-tools && \
   .venv/bin/pip-compile --build-isolation --output-file ${NOTEBOOK_BASE_DIR}/requirements.txt ${NOTEBOOK_BASE_DIR}/requirements.in  && \
   .venv/bin/pip --no-cache install -r ${NOTEBOOK_BASE_DIR}/requirements.txt && \
-  rm ${NOTEBOOK_BASE_DIR}/requirements.in
+  rm ${NOTEBOOK_BASE_DIR}/requirements.in && \
+  echo "Your environment contains these python packages:" && \
+  .venv/bin/pip list 
+
 RUN jupyter serverextension enable voila && \
   jupyter server extension enable voila
 
@@ -80,7 +83,7 @@ RUN MPLBACKEND=Agg .venv/bin/python -c "import matplotlib.pyplot" && \
 
 # copy README and CHANGELOG
 COPY --chown=$NB_UID:$NB_GID CHANGELOG.md ${NOTEBOOK_BASE_DIR}/CHANGELOG.md
-COPY --chown=$NB_UID:$NB_GID README.ipynb ${NOTEBOOK_BASE_DIR}/README.ipynb
+COPY --chown=$NB_UID:$NB_GID README.ipynb ${NOTEBOOK_BASE_DIR}/README_Jupyter_oSPARC.ipynb
 # remove write permissions from files which are not supposed to be edited
 RUN chmod gu-w ${NOTEBOOK_BASE_DIR}/CHANGELOG.md && \
   chmod gu-w ${NOTEBOOK_BASE_DIR}/requirements.txt

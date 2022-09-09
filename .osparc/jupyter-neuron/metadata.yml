@@ -1,28 +1,22 @@
-name: JupyterLab Math (Python+Octave)
+name: JupyterLab NEURON
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1024px-Jupyter_logo.svg.png
 description:
   "[JupyterLab](https://jupyter.org/) with **math** kernels in [octave](https://www.gnu.org/software/octave/index)
   (largely compatible with Matlab code) and python. Python kernel includes popular
   math packages like [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/),
   [matplotlib](https://matplotlib.org/), [plotly](https://plotly.com/python/) and
-  [scipy](https://www.scipy.org/) packages (see requirements.txt list)
-
+  [scipy](https://www.scipy.org/) packages (see requirements.in list).
+  Python kernel also includes neuron simulation packages like [NEURON](https://neuron.yale.edu/neuron/), [NetPyNE](http://netpyne.org/), [Brian2](https://brian2.readthedocs.io/en/2.0b4/index.html) and [brian2tools](https://pypi.org/project/brian2tools/)
   "
 key: simcore/services/dynamic/jupyter-neuron
 version: 2.0.0
 integration-version: 2.0.0
 type: dynamic
 authors:
-  - name: Pedro Crespo-Valero
-    email: crespo@itis.swiss
+  - name: Elisabetta Iavarone
+    email: iavarone@itis.swiss
     affiliation: IT'IS Foundation
-  - name: Sylvain Andereregg
-    email: anderegg@itis.swiss
-    affiliation: IT'IS Foundation
-  - name: Sylvain Reboux
-    email: reboux@zmt.swiss
-    affiliation: Zurich MedTech
-contact: crespo@itis.swiss
+contact: iavarone@itis.swiss
 inputs:
   input_1:
     displayOrder: 1.0
