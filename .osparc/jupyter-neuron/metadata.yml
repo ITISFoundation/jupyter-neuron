@@ -2,11 +2,13 @@ name: JupyterLab NEURON
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1024px-Jupyter_logo.svg.png
 description:
   "[JupyterLab](https://jupyter.org/) with **math** kernels in [octave](https://www.gnu.org/software/octave/index)
-  (largely compatible with Matlab code) and python. Python kernel includes popular
-  math packages like [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/),
+  (largely compatible with Matlab code) and python. 
+  Python kernel includes includes neuron simulation packages like [NEURON](https://neuron.yale.edu/neuron/), 
+  [NetPyNE](http://netpyne.org/), [Brian2](https://brian2.readthedocs.io/en/2.0b4/index.html) and 
+  [brian2tools](https://pypi.org/project/brian2tools/).
+  It also includes math packages like [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/),
   [matplotlib](https://matplotlib.org/), [plotly](https://plotly.com/python/) and
-  [scipy](https://www.scipy.org/) packages (see requirements.in list).
-  Python kernel also includes neuron simulation packages like [NEURON](https://neuron.yale.edu/neuron/), [NetPyNE](http://netpyne.org/), [Brian2](https://brian2.readthedocs.io/en/2.0b4/index.html) and [brian2tools](https://pypi.org/project/brian2tools/)
+  [scipy](https://www.scipy.org/) packages (see [requirements.in](https://github.com/ITISFoundation/jupyter-neuron/kernels/python-neuron/requirements.in)).
   "
 key: simcore/services/dynamic/jupyter-neuron
 version: 2.0.0
@@ -14,9 +16,9 @@ integration-version: 2.0.0
 type: dynamic
 authors:
   - name: Elisabetta Iavarone
-    email: iavarone@itis.swiss
+    email: 18575092+elisabettai@users.noreply.github.com
     affiliation: IT'IS Foundation
-contact: iavarone@itis.swiss
+contact: 18575092+elisabettai@users.noreply.github.com
 inputs:
   input_1:
     displayOrder: 1.0
