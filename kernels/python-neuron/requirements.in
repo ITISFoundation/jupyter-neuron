@@ -1,0 +1,33 @@
+# math-base
+h5py
+matplotlib
+numpy
+plotly
+scikit-learn
+scipy
+sympy
+
+pandas
+# optional extensions for pandas
+openpyxl
+xlrd
+xlwt
+
+# jupyter-extensions
+ipyevents
+ipympl
+ipywidgets
+jupyterlab_latex
+jupyterlab_widgets
+jupyterlab-git
+jupyterlab-lsp
+octave_kernel
+python-lsp-server[all]
+voila
+watchdog[watchmedo]
+
+# NEURON Simulator & co.
+neuron
+brian2
+netpyne
+brian2tools
