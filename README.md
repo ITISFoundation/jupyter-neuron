@@ -1,5 +1,17 @@
 # jupyter-neuron
-Source code for the o<sup>2</sup>S<sup>2</sup>PARC JupyterLab NEURON Service, based on [jupyter-neuron](https://github.com/ITISFoundation/jupyter-neuron). It also contains NEURON-based packages, including [NEURON](https://neuron.yale.edu/neuron/), [NetPyNE](http://netpyne.org/) and [Brian2](https://brian2.readthedocs.io/en/stable/) for the Python kernel.
+Source code for the o<sup>2</sup>S<sup>2</sup>PARC JupyterLab NEURON Service, based on [jupyter-neuron](https://github.com/ITISFoundation/jupyter-neuron). It also contains NEURON-based packages, including:
+  - [NEURON](https://neuron.yale.edu/neuron/)
+  - [NEST](https://nest-simulator.readthedocs.io/en/stable/ref_material/pynest_apis.html)
+  - [TVB](https://pypi.org/project/tvb/)
+  - [PyNN](https://neuralensemble.org/PyNN/)
+  - [BluePyOpt](https://github.com/BlueBrain/BluePyOpt#readme)
+  - [Brian2](https://brian2.readthedocs.io/en/stable/) 
+  - [brian2tools](https://pypi.org/project/brian2tools/)
+  - [NetPyNE](http://netpyne.org/)
+  - [pyNeuroML](https://docs.neuroml.org/Userdocs/Software/pyNeuroML.html)
+
+
+for the Python kernel.
 
 Building the docker image:
 
