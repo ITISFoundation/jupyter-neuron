@@ -19,8 +19,8 @@ description:
   [scipy](https://www.scipy.org/) packages (see [requirements.in](https://github.com/ITISFoundation/jupyter-neuron/blob/main/kernels/python-neuron/requirements.in)).
   "
 key: simcore/services/dynamic/jupyter-neuron
-version: 2.0.0
-integration-version: 2.0.0
+version: 2.0.1
+integration-version: 2.0.1
 type: dynamic
 authors:
   - name: Elisabetta Iavarone
