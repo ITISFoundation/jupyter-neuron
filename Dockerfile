@@ -16,6 +16,8 @@ RUN apt-get update && \
   ffmpeg \
   dvipng \
   gosu \
+  software-properties-common \ 
+  # NEW: to be able to then install NEST
   make \
   octave \
   gnuplot \
@@ -25,7 +27,7 @@ RUN apt-get update && \
   texlive-xetex \
   texlive-fonts-recommended \
   texlive-latex-recommended \
-  texlive-fonts-extra \
+  # texlive-fonts-extra \
   zip \
   fonts-freefont-otf \
   && \
@@ -33,7 +35,8 @@ RUN apt-get update && \
 
 # Installing octave packages requires make
 RUN octave --no-window-system --eval "pkg install -forge io" && \
-  octave --no-window-system --eval "pkg install -forge statistics" && \
+  # octave --no-window-system --eval "pkg install -forge statistics" && \
+  #### incompatibility issue - Octave is 5.2 by default (latest and only available versoin according to apt list -a octave, after apt(-get) update); statistics package requires 6.1. Therefore, do not install it
   octave --no-window-system --eval "pkg install -forge image"    
 
 RUN pip --no-cache --quiet install --upgrade \
@@ -51,6 +54,13 @@ ENV HOME="/home/$NB_USER"
 USER root
 
 WORKDIR ${HOME}
+
+### Install NEST Simulator (which includes PyNEST - python interface)
+RUN sudo add-apt-repository ppa:nest-simulator/nest
+RUN sudo apt-get update
+# RUN sudo add-apt-repository -y ppa:nest-simulator/nest 
+# RUN apt-get update 
+RUN apt-get install -y nest
 
 RUN python3 -m venv .venv &&\
   .venv/bin/pip --no-cache --quiet install --upgrade pip~=21.3 wheel setuptools &&\

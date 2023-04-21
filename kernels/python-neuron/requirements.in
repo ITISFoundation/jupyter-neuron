@@ -17,10 +17,17 @@ xlwt
 ipyevents
 ipympl
 ipywidgets
+##################################################
+### these versions needed to be specified 
+### in order to avoid an incompatibility pip error 
+ypy-websocket==0.8.2
+jupyter-ydoc==0.2.4
+jupyterlab-lsp==4.0.1
+##################################################
 jupyterlab_latex
 jupyterlab_widgets
 jupyterlab-git
-jupyterlab-lsp
+# jupyterlab-lsp ## version specified above
 octave_kernel
 python-lsp-server[all]
 voila
@@ -28,6 +35,10 @@ watchdog[watchmedo]
 
 # NEURON Simulator & co.
 neuron
+tvb
+PyNN==0.10.1
+bluepyopt
 brian2
-netpyne
 brian2tools
+netpyne
+pyneuroml
