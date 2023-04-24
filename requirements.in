@@ -1,0 +1,11 @@
+## Math-base and other requirement already available from jupyter-math base image
+
+# NEURON Simulator & co.
+neuron
+tvb
+PyNN==0.10.1
+bluepyopt
+brian2
+brian2tools
+netpyne
+pyneuroml
