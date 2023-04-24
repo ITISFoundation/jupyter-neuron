@@ -1,4 +1,4 @@
-FROM simcore/services/dynamic/jupyter-math:2.0.8 as base
+FROM itisfoundation/jupyter-math:2.0.8 as base
 LABEL maintainer="ordonez"
 USER root
 
