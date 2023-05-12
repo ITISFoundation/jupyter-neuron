@@ -4,7 +4,7 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := help
 
 export DOCKER_IMAGE_NAME ?= jupyter-neuron
-export DOCKER_IMAGE_TAG ?= 2.0.2
+export DOCKER_IMAGE_TAG ?= 2.0.3
 
 define _bumpversion
 	# upgrades as $(subst $(1),,$@) version, commits and tags
