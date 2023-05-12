@@ -28,6 +28,10 @@ RUN .venv/bin/pip --no-cache install nrnutils
 # # RUN apt-get update 
 # RUN apt-get install -y nest
 
+## create NEURON mechanisms; need to execute nrnivmodl in the appropriate folder
+RUN cd ${HOME}/.venv/lib/python3.9/site-packages/pyNN/neuron/nmodl &&\
+    ${HOME}/.venv/bin/nrnivmodl . && cd ${HOME}
+
 # remove write permissions from files which are not supposed to be edited
 RUN chmod gu-w ${NOTEBOOK_BASE_DIR}/requirements_base_math.txt &&\
     chmod gu-w ${NOTEBOOK_BASE_DIR}/requirements.txt
