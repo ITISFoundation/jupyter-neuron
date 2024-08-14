@@ -1,5 +1,5 @@
 # jupyter-neuron
-Source code for the o<sup>2</sup>S<sup>2</sup>PARC JupyterLab NEURON Service, based on [jupyter-neuron](https://github.com/ITISFoundation/jupyter-neuron). It also contains NEURON-based packages, including:
+Source code for the o<sup>2</sup>S<sup>2</sup>PARC JupyterLab NEURON Service, based on [jupyter-math](https://github.com/ITISFoundation/jupyter-math). It also contains NEURON-based packages, including:
   - [NEURON](https://neuron.yale.edu/neuron/)
   - [NEST](https://nest-simulator.readthedocs.io/en/stable/ref_material/pynest_apis.html)
   - [TVB](https://pypi.org/project/tvb/)
