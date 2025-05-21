@@ -3,7 +3,7 @@ description: https://raw.githubusercontent.com/ZurichMedTech/s4l-assets/refs/hea
 icon: https://raw.githubusercontent.com/ZurichMedTech/s4l-assets/main/app/icons/s4l/simcore_services_dynamic_jupyter-neuron.png
 thumbnail: https://raw.githubusercontent.com/ZurichMedTech/s4l-assets/main/app/thumbnails/s4l/simcore_services_dynamic_jupyter-neuron.png
 key: simcore/services/dynamic/jupyter-neuron
-version: 2.0.3
+version: 2.0.4
 integration-version: 2.0.0
 type: dynamic
 authors:

@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   jupyter-neuron:
-    image: simcore/services/dynamic/jupyter-neuron:2.0.3
+    image: simcore/services/dynamic/jupyter-neuron:2.0.4
     ports:
       - "8888:8888"
     environment:
