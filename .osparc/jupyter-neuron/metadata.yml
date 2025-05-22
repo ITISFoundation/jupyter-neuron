@@ -8,9 +8,9 @@ integration-version: 2.0.0
 type: dynamic
 authors:
   - name: Elisabetta Iavarone
-    email: 18575092+elisabettai@users.noreply.github.com
+    email: iavarone@itis.swiss
     affiliation: IT'IS Foundation
-contact: 18575092+elisabettai@users.noreply.github.com
+contact: iavarone@itis.swiss
 inputs:
   input_1:
     displayOrder: 1.0
