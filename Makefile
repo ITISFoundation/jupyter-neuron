@@ -4,13 +4,13 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := help
 
 export DOCKER_IMAGE_NAME ?= jupyter-neuron
-export DOCKER_IMAGE_TAG ?= 2.0.3
+export DOCKER_IMAGE_TAG ?= 2.0.4
 
 define _bumpversion
 	# upgrades as $(subst $(1),,$@) version, commits and tags
 	@docker run -it --rm -v $(PWD):/${DOCKER_IMAGE_NAME} \
 		-u $(shell id -u):$(shell id -g) \
-		itisfoundation/ci-service-integration-library:v1.0.1-dev-33 \
+		itisfoundation/ci-service-integration-library:v2.0.11 \
 		sh -c "cd /${DOCKER_IMAGE_NAME} && bump2version --verbose --list --config-file $(1) $(subst $(2),,$@)"
 endef
 
@@ -24,16 +24,16 @@ version-patch version-minor version-major: .bumpversion.cfg ## increases service
 compose-spec: ## runs ooil to assemble the docker-compose.yml file
 	@docker run -it --rm -v $(PWD):/${DOCKER_IMAGE_NAME} \
 		-u $(shell id -u):$(shell id -g) \
-		itisfoundation/ci-service-integration-library:v1.0.1-dev-33 \
+		itisfoundation/ci-service-integration-library:v2.0.11 \
 		sh -c "cd /${DOCKER_IMAGE_NAME} && ooil compose"
 
 .PHONY: build
 build: compose-spec	## build docker image
-	docker-compose build
+	docker compose build
 
 .PHONY: run-local
 run-local:	## runs image with local configuration
-	docker-compose --file docker-compose-local.yml up
+	docker compose --file docker-compose-local.yml up
 
 .PHONY: publish-local
 publish-local: ## push to local throw away registry to test integration
