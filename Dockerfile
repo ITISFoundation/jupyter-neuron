@@ -17,6 +17,10 @@ RUN .venv/bin/pip --no-cache install pip-tools && \
 RUN apt update && apt-get install -y libopenmpi-dev &&\
     .venv/bin/pip --no-cache install mpi4py
 
+## brian2tools==0.3 depends on markdown-strings which was removed from PyPI; install both from source
+RUN .venv/bin/pip --no-cache install git+https://github.com/awesmubarak/markdown_strings.git && \
+    .venv/bin/pip --no-cache install --no-deps brian2tools==0.3
+
 ## nrnutils imports neuron during install. I need to install it in a separate command
 RUN .venv/bin/pip --no-cache install nrnutils 
 
